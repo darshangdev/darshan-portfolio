@@ -13,29 +13,34 @@
   <div class="nav-links">
     <a href="#about">About</a>
     <a href="#projects">Projects</a>
-    <a href="#skills">Skills</a>
+    <a href="#metrics">Impact</a>
     <a href="#contact">Contact</a>
     <button id="themeToggle">🌙</button>
   </div>
 </nav>
 
 <header class="hero">
-  <div class="hero-content">
-    <h1>Darshan Gurudev</h1>
-    <p>Staff QA Manager • Automation • Performance • Playwright</p>
-    <a class="btn" href="assets/Darshan_Gurudev_Resume.docx.pdf" download>
-  Download Resume
-</a>
+  <div class="hero-inner">
+    <div class="hero-text">
+      <h1>Darshan Gurudev</h1>
+      <p>Staff QA Manager • Automation • Performance • Playwright</p>
+      <div class="hero-buttons">
+        <a class="btn" href="assets/resume.pdf" download>Download Resume</a>
+        <a class="btn-outline" href="#projects">View Work</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <img src="assets/profile.jpg" alt="Darshan">
+    </div>
   </div>
 </header>
 
-<section id="about" class="section">
+<section id="about" class="section reveal">
   <h2>About</h2>
   <p>
-    Staff QA Manager with 12+ years building scalable automation and
-    performance testing frameworks across airport parking and mobility
-    platforms (SP+, Aeroparker, Parking.com).
-    Expert in Playwright, JMeter, CI/CD and enterprise QA strategy.
+    QA leader with 12+ years delivering scalable automation and performance
+    testing across airport parking and mobility platforms (SP+, Aeroparker).
+    Specialist in Playwright, JMeter, CI/CD and enterprise QA strategy.
   </p>
 </section>
 
@@ -43,52 +48,63 @@
   <h2>Projects</h2>
   <div class="grid">
 
-    <div class="card">
-      <img src="assets/project/playwright.png" alt="">
-      <h3>Playwright Automation Framework</h3>
-      <p>Scalable UI automation across MPOS, MySpot & Parking.com.</p>
-      <a href="https://github.com/darshangdev" target="_blank">View</a>
+    <div class="card reveal" onclick="openModal('playwright')">
+      <img src="assets/project/playwright.png">
+      <h3>Playwright Automation</h3>
+      <p>Enterprise UI automation across MPOS & MySpot.</p>
     </div>
 
-    <div class="card">
-      <img src="assets/project/jmeter.png" alt="">
-      <h3>Performance Testing Suite</h3>
-      <p>JMeter load strategy identifying booking bottlenecks.</p>
-      <a href="https://github.com/darshangdev" target="_blank">View</a>
+    <div class="card reveal" onclick="openModal('perf')">
+      <img src="assets/project/jmeter.png">
+      <h3>Performance Suite</h3>
+      <p>Load strategy & bottleneck detection.</p>
     </div>
 
-    <div class="card">
-      <img src="assets/project/cicd.png" alt="">
-      <h3>CI/CD QA Integration</h3>
-      <p>Shift-left pipelines reducing release defects.</p>
-      <a href="https://github.com/darshangdev" target="_blank">View</a>
+    <div class="card reveal" onclick="openModal('cicd')">
+      <img src="assets/project/cicd.png">
+      <h3>CI/CD QA</h3>
+      <p>Shift-left pipelines & release quality.</p>
     </div>
 
   </div>
 </section>
 
-<section id="skills" class="section">
-  <h2>Skills</h2>
-  <ul class="skills">
-    <li>Playwright (JavaScript)</li>
-    <li>API Testing</li>
-    <li>JMeter Performance</li>
-    <li>CI/CD QA</li>
-    <li>Test Strategy</li>
-    <li>Automation Framework Design</li>
-  </ul>
+<section id="metrics" class="section reveal">
+  <h2>Impact</h2>
+  <div class="metrics">
+    <div class="metric">
+      <h3>70%+</h3>
+      <p>Regression automated</p>
+    </div>
+    <div class="metric">
+      <h3>40%</h3>
+      <p>Defect reduction</p>
+    </div>
+    <div class="metric">
+      <h3>3×</h3>
+      <p>Release confidence</p>
+    </div>
+  </div>
 </section>
 
-<section id="contact" class="section">
+<section id="contact" class="section reveal">
   <h2>Contact</h2>
   <p>Email: <a href="mailto:darshan.gurudev@gmail.com">darshan.gurudev@gmail.com</a></p>
   <p>GitHub: <a href="https://github.com/darshangdev">github.com/darshangdev</a></p>
-  <p>LinkedIn: <a href="#">Add LinkedIn</a></p>
 </section>
 
 <footer class="footer">
   © 2026 Darshan Gurudev
 </footer>
+
+<!-- Modal -->
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">×</span>
+    <h3 id="modalTitle"></h3>
+    <p id="modalText"></p>
+  </div>
+</div>
 
 <script src="script.js"></script>
 </body>
