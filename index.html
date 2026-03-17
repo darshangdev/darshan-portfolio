@@ -1,111 +1,976 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Darshan Gurudev | QA Automation Leader</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-
-<nav class="nav">
-  <div class="nav-logo">Darshan</div>
-  <div class="nav-links">
-    <a href="#about">About</a>
-    <a href="#projects">Projects</a>
-    <a href="#metrics">Impact</a>
-    <a href="#contact">Contact</a>
-    <button id="themeToggle">🌙</button>
-  </div>
-</nav>
-
-<header class="hero">
-  <div class="hero-inner">
-    <div class="hero-text">
-      <h1>Darshan Gurudev</h1>
-      <p>Staff QA Manager • Automation • Performance • Playwright</p>
-      <div class="hero-buttons">
-        <a class="btn" href="assets/resume.pdf" download>Download Resume</a>
-        <a class="btn-outline" href="#projects">View Work</a>
-      </div>
-    </div>
-    <div class="hero-card">
-      <img src="assets/profile.jpg" alt="Darshan">
-    </div>
-  </div>
-</header>
-
-<section id="about" class="section reveal">
-  <h2>About</h2>
-  <p>
-    QA leader with 12+ years delivering scalable automation and performance
-    testing across airport parking and mobility platforms (SP+, Aeroparker).
-    Specialist in Playwright, JMeter, CI/CD and enterprise QA strategy.
-  </p>
-</section>
-
-<section id="projects" class="section">
-  <h2>Projects</h2>
-  <div class="grid">
-
-    <div class="card reveal" onclick="openModal('playwright')">
-      <img src="assets/project/playwright.png">
-      <h3>Playwright Automation</h3>
-      <p>Enterprise UI automation across MPOS & MySpot.</p>
-    </div>
-
-    <div class="card reveal" onclick="openModal('perf')">
-      <img src="assets/project/jmeter.png">
-      <h3>Performance Suite</h3>
-      <p>Load strategy & bottleneck detection.</p>
-    </div>
-
-    <div class="card reveal" onclick="openModal('cicd')">
-      <img src="assets/project/cicd.png">
-      <h3>CI/CD QA</h3>
-      <p>Shift-left pipelines & release quality.</p>
-    </div>
-
-  </div>
-</section>
-
-<section id="metrics" class="section reveal">
-  <h2>Impact</h2>
-  <div class="metrics">
-    <div class="metric">
-      <h3>70%+</h3>
-      <p>Regression automated</p>
-    </div>
-    <div class="metric">
-      <h3>40%</h3>
-      <p>Defect reduction</p>
-    </div>
-    <div class="metric">
-      <h3>3×</h3>
-      <p>Release confidence</p>
-    </div>
-  </div>
-</section>
-
-<section id="contact" class="section reveal">
-  <h2>Contact</h2>
-  <p>Email: <a href="mailto:darshan.gurudev@gmail.com">darshan.gurudev@gmail.com</a></p>
-  <p>GitHub: <a href="https://github.com/darshangdev">github.com/darshangdev</a></p>
-</section>
-
-<footer class="footer">
-  © 2026 Darshan Gurudev
-</footer>
-
-<!-- Modal -->
-<div id="modal" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal()">×</span>
-    <h3 id="modalTitle"></h3>
-    <p id="modalText"></p>
-  </div>
-</div>
-
-<script src="script.js"></script>
-</body>
-</html>
+    2 <html lang="en">
+    3 <head>
+    4   <meta charset="UTF-8" />
+    5   <meta name="viewport" content="width=device-width, initial-scale=1.0"
+       />
+    6   <title>Urvi Dhomne — Product Designer</title>
+    7   <style>
+    8     /* ─── Reset & Base ─────────────────────────────────────────── */
+    9     *, *::before, *::after { box-sizing: border-box; margin: 0; padding
+      : 0; }
+   10
+   11     :root {
+   12       --black:   #111111;
+   13       --white:   #f5f2ec;
+   14       --gray:    #8a8a8a;
+   15       --light:   #e8e4dc;
+   16
+   17       --accent-blue:   #5568af;
+   18       --accent-purple: #A5509F;
+   19       --accent-deep:   #7B2D8E;
+   20       --accent-gray:   #636969;
+   21       --accent-orange: #CC5500;
+   22       --accent-soft:   #d4cfc6;
+   23
+   24       --font-sans: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+   25       --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+   26
+   27       --ease: cubic-bezier(0.22, 1, 0.36, 1);
+   28       --dur: 0.6s;
+   29     }
+   30
+   31     html { scroll-behavior: smooth; }
+   32
+   33     body {
+   34       font-family: var(--font-sans);
+   35       background: var(--white);
+   36       color: var(--black);
+   37       cursor: none;
+   38       overflow-x: hidden;
+   39       line-height: 1.6;
+   40     }
+   41
+   42     a { color: inherit; text-decoration: none; }
+   43     img { display: block; max-width: 100%; }
+   44     ul { list-style: none; }
+   45
+   46     /* ─── Custom Cursor ────────────────────────────────────────── */
+   47     #cursor {
+   48       width: 12px; height: 12px;
+   49       border-radius: 50%;
+   50       background: var(--black);
+   51       position: fixed;
+   52       top: 0; left: 0;
+   53       pointer-events: none;
+   54       z-index: 9999;
+   55       transform: translate(-50%, -50%);
+   56       transition: transform 0.08s, width 0.3s var(--ease), height 0.3s 
+      var(--ease), background 0.3s;
+   57       mix-blend-mode: difference;
+   58     }
+   59     #cursor.hover {
+   60       width: 44px; height: 44px;
+   61       background: var(--black);
+   62     }
+   63     #cursor-ring {
+   64       width: 36px; height: 36px;
+   65       border-radius: 50%;
+   66       border: 1px solid rgba(17,17,17,0.3);
+   67       position: fixed;
+   68       top: 0; left: 0;
+   69       pointer-events: none;
+   70       z-index: 9998;
+   71       transform: translate(-50%, -50%);
+   72       transition: transform 0.18s var(--ease), width 0.3s var(--ease),
+      height 0.3s var(--ease);
+   73     }
+   74
+   75     /* ─── Header / Nav ─────────────────────────────────────────── */
+   76     header {
+   77       position: fixed;
+   78       top: 0; left: 0; right: 0;
+   79       z-index: 100;
+   80       display: flex;
+   81       align-items: center;
+   82       justify-content: space-between;
+   83       padding: 20px 40px;
+   84       background: transparent;
+   85       transition: background 0.4s;
+   86     }
+   87     header.scrolled { background: rgba(245,242,236,0.9); backdrop-filte
+      r: blur(12px); }
+   88
+   89     .logo {
+   90       font-size: 22px;
+   91       font-weight: 700;
+   92       letter-spacing: -0.04em;
+   93       display: flex;
+   94       align-items: center;
+   95       gap: 8px;
+   96     }
+   97     .logo svg { width: 28px; height: 28px; }
+   98
+   99     nav { display: flex; gap: 32px; }
+  100     nav a {
+  101       font-size: 13px;
+  102       letter-spacing: 0.06em;
+  103       text-transform: uppercase;
+  104       color: var(--gray);
+  105       transition: color 0.2s;
+  106     }
+  107     nav a:hover { color: var(--black); }
+  108
+  109     /* ─── Hero ─────────────────────────────────────────────────── */
+  110     #hero {
+  111       min-height: 100vh;
+  112       display: flex;
+  113       flex-direction: column;
+  114       justify-content: flex-end;
+  115       padding: 0 40px 60px;
+  116       position: relative;
+  117       overflow: hidden;
+  118     }
+  119
+  120     .hero-bg {
+  121       position: absolute;
+  122       inset: 0;
+  123       background: radial-gradient(ellipse 80% 60% at 60% 40%, #ddd8cc 0
+      %, var(--white) 70%);
+  124     }
+  125
+  126     .hero-name {
+  127       position: relative;
+  128       z-index: 2;
+  129       font-size: clamp(64px, 12vw, 180px);
+  130       font-weight: 800;
+  131       letter-spacing: -0.04em;
+  132       line-height: 0.9;
+  133       overflow: hidden;
+  134     }
+  135     .hero-name span { display: inline-block; }
+  136
+  137     .hero-sub {
+  138       position: relative;
+  139       z-index: 2;
+  140       display: flex;
+  141       align-items: flex-end;
+  142       justify-content: space-between;
+  143       margin-top: 24px;
+  144       flex-wrap: wrap;
+  145       gap: 16px;
+  146     }
+  147     .hero-role {
+  148       font-size: clamp(16px, 2.5vw, 24px);
+  149       font-weight: 300;
+  150       color: var(--gray);
+  151       letter-spacing: 0.02em;
+  152     }
+  153     .hero-locations {
+  154       display: flex;
+  155       gap: 40px;
+  156       font-size: 13px;
+  157       color: var(--gray);
+  158       letter-spacing: 0.06em;
+  159       text-transform: uppercase;
+  160     }
+  161     .hero-locations .loc-label { font-size: 10px; margin-bottom: 4px; }
+  162     .hero-locations .loc-city {
+  163       font-size: 15px;
+  164       font-weight: 600;
+  165       color: var(--black);
+  166       letter-spacing: 0.02em;
+  167     }
+  168     .typewriter { display: inline-block; }
+  169
+  170     /* Scroll indicator */
+  171     .scroll-hint {
+  172       position: relative;
+  173       z-index: 2;
+  174       margin-top: 48px;
+  175       display: flex;
+  176       align-items: center;
+  177       gap: 12px;
+  178       font-size: 11px;
+  179       letter-spacing: 0.1em;
+  180       text-transform: uppercase;
+  181       color: var(--gray);
+  182     }
+  183     .scroll-line {
+  184       width: 40px; height: 1px;
+  185       background: var(--gray);
+  186       animation: scrollPulse 2s ease-in-out infinite;
+  187     }
+  188     @keyframes scrollPulse {
+  189       0%,100% { opacity: 0.4; transform: scaleX(1); }
+  190       50% { opacity: 1; transform: scaleX(1.3); transform-origin: left;
+       }
+  191     }
+  192
+  193     /* ─── Marquee Banner ───────────────────────────────────────── */
+  194     .marquee-wrap {
+  195       overflow: hidden;
+  196       background: var(--black);
+  197       color: var(--white);
+  198       padding: 16px 0;
+  199       white-space: nowrap;
+  200     }
+  201     .marquee-track {
+  202       display: inline-flex;
+  203       gap: 0;
+  204       animation: marqueeScroll 20s linear infinite;
+  205     }
+  206     .marquee-track span {
+  207       font-size: 13px;
+  208       letter-spacing: 0.1em;
+  209       text-transform: uppercase;
+  210       padding: 0 32px;
+  211       opacity: 0.7;
+  212     }
+  213     .marquee-track span.dot { opacity: 0.3; padding: 0 8px; }
+  214     @keyframes marqueeScroll {
+  215       from { transform: translateX(0); }
+  216       to { transform: translateX(-50%); }
+  217     }
+  218
+  219     /* ─── Section Shared ───────────────────────────────────────── */
+  220     section { padding: 100px 40px; }
+  221     .section-label {
+  222       font-size: 11px;
+  223       letter-spacing: 0.12em;
+  224       text-transform: uppercase;
+  225       color: var(--gray);
+  226       margin-bottom: 48px;
+  227       display: flex;
+  228       align-items: center;
+  229       gap: 12px;
+  230     }
+  231     .section-label::before {
+  232       content: '';
+  233       display: block;
+  234       width: 24px; height: 1px;
+  235       background: var(--gray);
+  236     }
+  237
+  238     .reveal {
+  239       opacity: 0;
+  240       transform: translateY(40px);
+  241       transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
+  242     }
+  243     .reveal.visible { opacity: 1; transform: none; }
+  244
+  245     /* ─── About ────────────────────────────────────────────────── */
+  246     #about { max-width: 1200px; margin: 0 auto; }
+  247     .about-grid {
+  248       display: grid;
+  249       grid-template-columns: 1fr 1fr;
+  250       gap: 80px;
+  251       align-items: start;
+  252     }
+  253     .about-text p {
+  254       font-size: clamp(18px, 2.5vw, 28px);
+  255       font-weight: 300;
+  256       line-height: 1.5;
+  257       color: var(--black);
+  258     }
+  259     .about-text p + p { margin-top: 24px; color: var(--gray); font-size
+      : clamp(14px, 1.5vw, 18px); }
+  260
+  261     .about-details { display: flex; flex-direction: column; gap: 32px;
+      padding-top: 8px; }
+  262     .about-detail-item { border-top: 1px solid var(--light); padding-to
+      p: 20px; }
+  263     .about-detail-item h4 {
+  264       font-size: 11px;
+  265       letter-spacing: 0.1em;
+  266       text-transform: uppercase;
+  267       color: var(--gray);
+  268       margin-bottom: 8px;
+  269     }
+  270     .about-detail-item p { font-size: 15px; line-height: 1.5; }
+  271
+  272     /* ─── Projects ─────────────────────────────────────────────── */
+  273     #projects { background: var(--black); color: var(--white); }
+  274     .projects-header {
+  275       max-width: 1200px;
+  276       margin: 0 auto 64px;
+  277       display: flex;
+  278       align-items: baseline;
+  279       justify-content: space-between;
+  280     }
+  281     .projects-header h2 {
+  282       font-size: clamp(36px, 5vw, 72px);
+  283       font-weight: 700;
+  284       letter-spacing: -0.03em;
+  285     }
+  286     .projects-header .section-label { color: rgba(245,242,236,0.4); }
+  287     .projects-header .section-label::before { background: rgba(245,242,
+      236,0.4); }
+  288
+  289     .projects-list { max-width: 1200px; margin: 0 auto; }
+  290     .project-item {
+  291       display: grid;
+  292       grid-template-columns: 80px 1fr auto;
+  293       align-items: center;
+  294       gap: 32px;
+  295       padding: 28px 0;
+  296       border-bottom: 1px solid rgba(245,242,236,0.1);
+  297       cursor: pointer;
+  298       transition: background 0.3s;
+  299       border-radius: 8px;
+  300       padding-left: 16px;
+  301     }
+  302     .project-item:hover { background: rgba(245,242,236,0.05); }
+  303     .project-item:hover .project-arrow { transform: translate(6px, -6px
+      ); }
+  304
+  305     .project-num {
+  306       font-size: 12px;
+  307       font-family: var(--font-mono);
+  308       color: rgba(245,242,236,0.3);
+  309     }
+  310     .project-info h3 {
+  311       font-size: clamp(18px, 2vw, 26px);
+  312       font-weight: 600;
+  313       letter-spacing: -0.02em;
+  314       margin-bottom: 4px;
+  315     }
+  316     .project-info .project-tags {
+  317       display: flex;
+  318       gap: 8px;
+  319       flex-wrap: wrap;
+  320     }
+  321     .project-tag {
+  322       font-size: 11px;
+  323       letter-spacing: 0.06em;
+  324       text-transform: uppercase;
+  325       padding: 3px 10px;
+  326       border-radius: 20px;
+  327       border: 1px solid rgba(245,242,236,0.2);
+  328       color: rgba(245,242,236,0.5);
+  329     }
+  330     .project-tag.accent { color: inherit; border-color: currentColor; }
+  331
+  332     .project-arrow {
+  333       font-size: 22px;
+  334       color: rgba(245,242,236,0.3);
+  335       transition: transform 0.3s var(--ease), color 0.3s;
+  336     }
+  337     .project-item:hover .project-arrow { color: var(--white); }
+  338
+  339     .project-color-bar {
+  340       width: 4px;
+  341       height: 100%;
+  342       border-radius: 2px;
+  343       position: absolute;
+  344       left: 0;
+  345     }
+  346
+  347     /* ─── Skills ───────────────────────────────────────────────── */
+  348     #skills { max-width: 1200px; margin: 0 auto; }
+  349     .skills-grid {
+  350       display: grid;
+  351       grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  352       gap: 16px;
+  353     }
+  354     .skill-pill {
+  355       padding: 12px 20px;
+  356       border: 1px solid var(--light);
+  357       border-radius: 100px;
+  358       font-size: 13px;
+  359       text-align: center;
+  360       color: var(--gray);
+  361       transition: all 0.25s var(--ease);
+  362       cursor: default;
+  363     }
+  364     .skill-pill:hover {
+  365       background: var(--black);
+  366       color: var(--white);
+  367       border-color: var(--black);
+  368       transform: translateY(-2px);
+  369     }
+  370
+  371     /* ─── Experience ───────────────────────────────────────────── */
+  372     #experience { background: var(--light); }
+  373     .exp-inner { max-width: 1200px; margin: 0 auto; }
+  374     .exp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80p
+      x; }
+  375
+  376     .exp-section h3 {
+  377       font-size: 11px;
+  378       letter-spacing: 0.12em;
+  379       text-transform: uppercase;
+  380       color: var(--gray);
+  381       margin-bottom: 32px;
+  382     }
+  383     .exp-item { margin-bottom: 36px; padding-bottom: 36px; border-botto
+      m: 1px solid rgba(17,17,17,0.1); }
+  384     .exp-item:last-child { border-bottom: none; }
+  385     .exp-item .exp-period {
+  386       font-size: 11px;
+  387       font-family: var(--font-mono);
+  388       color: var(--gray);
+  389       margin-bottom: 6px;
+  390       letter-spacing: 0.06em;
+  391     }
+  392     .exp-item h4 { font-size: 17px; font-weight: 600; margin-bottom: 4p
+      x; letter-spacing: -0.02em; }
+  393     .exp-item .exp-company { font-size: 13px; color: var(--gray); margi
+      n-bottom: 8px; }
+  394     .exp-item p { font-size: 14px; color: var(--gray); line-height: 1.6
+      ; }
+  395
+  396     /* ─── Contact ──────────────────────────────────────────────── */
+  397     #contact {
+  398       text-align: center;
+  399       padding: 120px 40px;
+  400       position: relative;
+  401       overflow: hidden;
+  402     }
+  403     .contact-bg {
+  404       position: absolute;
+  405       inset: 0;
+  406       background: radial-gradient(ellipse 60% 70% at 50% 100%, #d4cfc6 
+      0%, var(--white) 60%);
+  407     }
+  408     .contact-inner { position: relative; z-index: 1; max-width: 700px;
+      margin: 0 auto; }
+  409     .contact-inner h2 {
+  410       font-size: clamp(40px, 7vw, 96px);
+  411       font-weight: 800;
+  412       letter-spacing: -0.04em;
+  413       line-height: 1;
+  414       margin-bottom: 24px;
+  415     }
+  416     .contact-inner p { font-size: 16px; color: var(--gray); margin-bott
+      om: 48px; line-height: 1.7; }
+  417     .contact-links { display: flex; gap: 16px; justify-content: center;
+       flex-wrap: wrap; }
+  418     .btn {
+  419       display: inline-flex;
+  420       align-items: center;
+  421       gap: 8px;
+  422       padding: 14px 32px;
+  423       border-radius: 100px;
+  424       font-size: 14px;
+  425       font-weight: 500;
+  426       letter-spacing: 0.02em;
+  427       transition: all 0.3s var(--ease);
+  428     }
+  429     .btn-dark { background: var(--black); color: var(--white); }
+  430     .btn-dark:hover { background: #333; transform: translateY(-2px); }
+  431     .btn-outline { border: 1.5px solid var(--black); color: var(--black
+      ); }
+  432     .btn-outline:hover { background: var(--black); color: var(--white);
+       transform: translateY(-2px); }
+  433
+  434     /* ─── Footer ───────────────────────────────────────────────── */
+  435     footer {
+  436       background: var(--black);
+  437       color: var(--white);
+  438       padding: 40px;
+  439       display: flex;
+  440       align-items: center;
+  441       justify-content: space-between;
+  442       flex-wrap: wrap;
+  443       gap: 16px;
+  444     }
+  445     footer .footer-copy { font-size: 13px; color: rgba(245,242,236,0.4)
+      ; }
+  446     footer .footer-links {
+  447       display: flex;
+  448       gap: 28px;
+  449       flex-wrap: wrap;
+  450     }
+  451     footer .footer-links a {
+  452       font-size: 13px;
+  453       color: rgba(245,242,236,0.5);
+  454       transition: color 0.2s;
+  455       min-height: 44px;
+  456       min-width: 44px;
+  457       display: inline-flex;
+  458       align-items: center;
+  459       padding: 0 4px;
+  460     }
+  461     footer .footer-links a:hover { color: var(--white); }
+  462
+  463     /* ─── Mobile ───────────────────────────────────────────────── */
+  464     @media (max-width: 768px) {
+  465       header { padding: 16px 24px; }
+  466       nav { gap: 20px; }
+  467       section { padding: 80px 24px; }
+  468       #hero { padding: 0 24px 48px; }
+  469
+  470       .about-grid { grid-template-columns: 1fr; gap: 48px; }
+  471       .exp-grid { grid-template-columns: 1fr; gap: 48px; }
+  472       .project-item { grid-template-columns: 40px 1fr auto; gap: 16px;
+      }
+  473       footer { padding: 32px 24px; flex-direction: column; align-items:
+       flex-start; }
+  474       .hero-locations { gap: 24px; }
+  475       #cursor, #cursor-ring { display: none; }
+  476       body { cursor: auto; }
+  477     }
+  478
+  479     @media (max-width: 480px) {
+  480       nav { display: none; }
+  481     }
+  482   </style>
+  483 </head>
+  484 <body>
+  485
+  486 <!-- Custom Cursor -->
+  487 <div id="cursor"></div>
+  488 <div id="cursor-ring"></div>
+  489
+  490 <!-- Header -->
+  491 <header id="header">
+  492   <a href="#hero" class="logo">
+  493     <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/
+      svg">
+  494       <circle cx="14" cy="14" r="5" fill="currentColor"/>
+  495       <line x1="14" y1="2" x2="14" y2="6" stroke="currentColor" stroke-
+      width="2" stroke-linecap="round"/>
+  496       <line x1="14" y1="22" x2="14" y2="26" stroke="currentColor" strok
+      e-width="2" stroke-linecap="round"/>
+  497       <line x1="2" y1="14" x2="6" y2="14" stroke="currentColor" stroke-
+      width="2" stroke-linecap="round"/>
+  498       <line x1="22" y1="14" x2="26" y2="14" stroke="currentColor" strok
+      e-width="2" stroke-linecap="round"/>
+  499       <line x1="5.5" y1="5.5" x2="8.4" y2="8.4" stroke="currentColor" s
+      troke-width="2" stroke-linecap="round"/>
+  500       <line x1="19.6" y1="19.6" x2="22.5" y2="22.5" stroke="currentColo
+      r" stroke-width="2" stroke-linecap="round"/>
+  501       <line x1="22.5" y1="5.5" x2="19.6" y2="8.4" stroke="currentColor"
+       stroke-width="2" stroke-linecap="round"/>
+  502       <line x1="8.4" y1="19.6" x2="5.5" y2="22.5" stroke="currentColor"
+       stroke-width="2" stroke-linecap="round"/>
+  503     </svg>
+  504     Urvi Dhomne
+  505   </a>
+  506   <nav>
+  507     <a href="#about">About</a>
+  508     <a href="#projects">Projects</a>
+  509     <a href="#skills">Skills</a>
+  510     <a href="#contact">Contact</a>
+  511   </nav>
+  512 </header>
+  513
+  514 <!-- Hero -->
+  515 <section id="hero">
+  516   <div class="hero-bg"></div>
+  517   <div class="hero-name reveal">
+  518     <span id="hero-first"></span><br>
+  519     <span id="hero-last"></span>
+  520   </div>
+  521   <div class="hero-sub reveal" style="transition-delay:0.2s">
+  522     <p class="hero-role">Product Designer &amp; UX Strategist</p>
+  523     <div class="hero-locations">
+  524       <div>
+  525         <div class="loc-label">Originally from</div>
+  526         <div class="loc-city typewriter" id="loc-mumbai"></div>
+  527       </div>
+  528       <div>
+  529         <div class="loc-label">Currently in</div>
+  530         <div class="loc-city typewriter" id="loc-dc"></div>
+  531       </div>
+  532     </div>
+  533   </div>
+  534   <div class="scroll-hint reveal" style="transition-delay:0.4s">
+  535     <span class="scroll-line"></span>
+  536     <span>Scroll to explore</span>
+  537   </div>
+  538 </section>
+  539
+  540 <!-- Marquee -->
+  541 <div class="marquee-wrap" aria-hidden="true">
+  542   <div class="marquee-track" id="marquee-track">
+  543     <span>Product Design</span><span class="dot">✦</span>
+  544     <span>UX Research</span><span class="dot">✦</span>
+  545     <span>Interaction Design</span><span class="dot">✦</span>
+  546     <span>Prototyping</span><span class="dot">✦</span>
+  547     <span>Systems Thinking</span><span class="dot">✦</span>
+  548     <span>AI-Powered Products</span><span class="dot">✦</span>
+  549     <span>3D Design</span><span class="dot">✦</span>
+  550     <span>Product Management</span><span class="dot">✦</span>
+  551     <!-- duplicate for seamless loop -->
+  552     <span>Product Design</span><span class="dot">✦</span>
+  553     <span>UX Research</span><span class="dot">✦</span>
+  554     <span>Interaction Design</span><span class="dot">✦</span>
+  555     <span>Prototyping</span><span class="dot">✦</span>
+  556     <span>Systems Thinking</span><span class="dot">✦</span>
+  557     <span>AI-Powered Products</span><span class="dot">✦</span>
+  558     <span>3D Design</span><span class="dot">✦</span>
+  559     <span>Product Management</span><span class="dot">✦</span>
+  560   </div>
+  561 </div>
+  562
+  563 <!-- About -->
+  564 <section>
+  565   <div id="about">
+  566     <div class="section-label reveal">About Me</div>
+  567     <div class="about-grid">
+  568       <div class="about-text reveal">
+  569         <p>I founded a clothing brand to see my designs in the real wor
+      ld. I code because understanding constraints makes me design smarter so
+      lutions.</p>
+  570         <p>Currently working in Product Management &amp; UX in Chicago,
+       with a background in Electronics Engineering and Engineering Managemen
+      t. I bridge the gap between technical complexity and human-centered exp
+      erience.</p>
+  571       </div>
+  572       <div class="about-details reveal" style="transition-delay:0.15s">
+  573         <div class="about-detail-item">
+  574           <h4>Education</h4>
+  575           <p>MS Engineering Management<br><span style="color:var(--gray
+      );font-size:13px">UMass Amherst · 2023–2025</span></p>
+  576         </div>
+  577         <div class="about-detail-item">
+  578           <h4>Background</h4>
+  579           <p>BS Electronics Engineering<br><span style="color:var(--gra
+      y);font-size:13px">University of Mumbai · 2017–2022</span></p>
+  580         </div>
+  581         <div class="about-detail-item">
+  582           <h4>Current Role</h4>
+  583           <p>Product Management, UX<br><span style="color:var(--gray);f
+      ont-size:13px">Chicago · Aug 2025–Present</span></p>
+  584         </div>
+  585         <div class="about-detail-item">
+  586           <h4>Interests</h4>
+  587           <p>Clothing design · 3D modeling · AI-assisted workflows · Sy
+      stems thinking</p>
+  588         </div>
+  589       </div>
+  590     </div>
+  591   </div>
+  592 </section>
+  593
+  594 <!-- Projects -->
+  595 <section id="projects">
+  596   <div class="projects-header">
+  597     <div class="section-label reveal">Selected Work</div>
+  598     <h2 class="reveal" style="transition-delay:0.1s">Projects</h2>
+  599   </div>
+  600   <div class="projects-list">
+  601
+  602     <div class="project-item reveal" style="--accent:var(--accent-deep)
+      ">
+  603       <div class="project-num">01</div>
+  604       <div class="project-info">
+  605         <h3>TASI</h3>
+  606         <div class="project-tags">
+  607           <span class="project-tag accent" style="color:#7B2D8E;border-
+      color:#7B2D8E">UX Research</span>
+  608           <span class="project-tag">Product Strategy</span>
+  609           <span class="project-tag">Prototyping</span>
+  610         </div>
+  611       </div>
+  612       <div class="project-arrow">↗</div>
+  613     </div>
+  614
+  615     <div class="project-item reveal" style="transition-delay:0.08s">
+  616       <div class="project-num">02</div>
+  617       <div class="project-info">
+  618         <h3>Primer Seltzer</h3>
+  619         <div class="project-tags">
+  620           <span class="project-tag accent" style="color:#636969;border-
+      color:#636969">Brand Design</span>
+  621           <span class="project-tag">UI Design</span>
+  622           <span class="project-tag">E-commerce</span>
+  623         </div>
+  624       </div>
+  625       <div class="project-arrow">↗</div>
+  626     </div>
+  627
+  628     <div class="project-item reveal" style="transition-delay:0.12s">
+  629       <div class="project-num">03</div>
+  630       <div class="project-info">
+  631         <h3>Mahi Restaurant</h3>
+  632         <div class="project-tags">
+  633           <span class="project-tag accent" style="color:#5568af;border-
+      color:#5568af">UI/UX Case Study</span>
+  634           <span class="project-tag">Mobile Design</span>
+  635           <span class="project-tag">User Research</span>
+  636         </div>
+  637       </div>
+  638       <div class="project-arrow">↗</div>
+  639     </div>
+  640
+  641     <div class="project-item reveal" style="transition-delay:0.16s">
+  642       <div class="project-num">04</div>
+  643       <div class="project-info">
+  644         <h3>Slack UI Interface</h3>
+  645         <div class="project-tags">
+  646           <span class="project-tag accent" style="color:#A5509F;border-
+      color:#A5509F">UI Redesign</span>
+  647           <span class="project-tag">Design Systems</span>
+  648           <span class="project-tag">Accessibility</span>
+  649         </div>
+  650       </div>
+  651       <div class="project-arrow">↗</div>
+  652     </div>
+  653
+  654     <div class="project-item reveal" style="transition-delay:0.20s">
+  655       <div class="project-num">05</div>
+  656       <div class="project-info">
+  657         <h3>AI-Powered Projects</h3>
+  658         <div class="project-tags">
+  659           <span class="project-tag accent" style="color:#CC5500;border-
+      color:#CC5500">AI / ML</span>
+  660           <span class="project-tag">Interaction Design</span>
+  661           <span class="project-tag">Research</span>
+  662         </div>
+  663       </div>
+  664       <div class="project-arrow">↗</div>
+  665     </div>
+  666
+  667     <div class="project-item reveal" style="transition-delay:0.24s">
+  668       <div class="project-num">06</div>
+  669       <div class="project-info">
+  670         <h3>3D Voxels</h3>
+  671         <div class="project-tags">
+  672           <span class="project-tag accent" style="color:#d4cfc6;border-
+      color:#d4cfc6">3D Design</span>
+  673           <span class="project-tag">MagicaVoxel</span>
+  674           <span class="project-tag">Creative Direction</span>
+  675         </div>
+  676       </div>
+  677       <div class="project-arrow">↗</div>
+  678     </div>
+  679
+  680   </div>
+  681 </section>
+  682
+  683 <!-- Skills -->
+  684 <section>
+  685   <div id="skills">
+  686     <div class="section-label reveal">Skills &amp; Tools</div>
+  687     <div class="skills-grid">
+  688       <div class="skill-pill reveal">Figma</div>
+  689       <div class="skill-pill reveal" style="transition-delay:0.04s">Mir
+      o</div>
+  690       <div class="skill-pill reveal" style="transition-delay:0.08s">Pho
+      toshop</div>
+  691       <div class="skill-pill reveal" style="transition-delay:0.12s">Mag
+      icaVoxel</div>
+  692       <div class="skill-pill reveal" style="transition-delay:0.16s">Aut
+      oCAD</div>
+  693       <div class="skill-pill reveal" style="transition-delay:0.20s">Ado
+      be XD</div>
+  694       <div class="skill-pill reveal" style="transition-delay:0.24s">Ill
+      ustrator</div>
+  695       <div class="skill-pill reveal" style="transition-delay:0.28s">Pro
+      create</div>
+  696       <div class="skill-pill reveal" style="transition-delay:0.32s">Fig
+      Jam</div>
+  697       <div class="skill-pill reveal" style="transition-delay:0.36s">Aft
+      er Effects</div>
+  698       <div class="skill-pill reveal" style="transition-delay:0.40s">Lot
+      tie</div>
+  699       <div class="skill-pill reveal" style="transition-delay:0.44s">Fra
+      mer</div>
+  700       <div class="skill-pill reveal" style="transition-delay:0.48s">Not
+      ion</div>
+  701       <div class="skill-pill reveal" style="transition-delay:0.52s">Cur
+      sor</div>
+  702       <div class="skill-pill reveal" style="transition-delay:0.56s">Cla
+      ude Code</div>
+  703     </div>
+  704   </div>
+  705 </section>
+  706
+  707 <!-- Experience & Education -->
+  708 <section id="experience">
+  709   <div class="exp-inner">
+  710     <div class="section-label reveal">Background</div>
+  711     <div class="exp-grid">
+  712       <div class="exp-section">
+  713         <h3 class="reveal">Experience</h3>
+  714         <div class="exp-item reveal" style="transition-delay:0.1s">
+  715           <div class="exp-period">Aug 2025 – Present</div>
+  716           <h4>Product Management, UX</h4>
+  717           <div class="exp-company">Chicago, IL</div>
+  718           <p>Leading UX strategy and product roadmap for enterprise-sca
+      le design initiatives.</p>
+  719         </div>
+  720         <div class="exp-item reveal" style="transition-delay:0.15s">
+  721           <div class="exp-period">2022 – 2023</div>
+  722           <h4>UX Designer</h4>
+  723           <div class="exp-company">Primer Seltzer</div>
+  724           <p>Designed end-to-end digital experience for brand launch in
+      cluding e-commerce and identity systems.</p>
+  725         </div>
+  726         <div class="exp-item reveal" style="transition-delay:0.20s">
+  727           <div class="exp-period">2021 – 2022</div>
+  728           <h4>Product Design Intern</h4>
+  729           <div class="exp-company">TASI</div>
+  730           <p>Conducted user research and designed mobile-first product
+      flows for a B2C platform.</p>
+  731         </div>
+  732         <div class="exp-item reveal" style="transition-delay:0.25s">
+  733           <div class="exp-period">2020 – 2023</div>
+  734           <h4>Freelance Designer</h4>
+  735           <div class="exp-company">Independent · Mumbai</div>
+  736           <p>Founded and ran a clothing brand; designed visual identity
+      , garments, and digital marketing assets.</p>
+  737         </div>
+  738       </div>
+  739
+  740       <div class="exp-section">
+  741         <h3 class="reveal">Education</h3>
+  742         <div class="exp-item reveal" style="transition-delay:0.1s">
+  743           <div class="exp-period">2023 – 2025</div>
+  744           <h4>MS Engineering Management</h4>
+  745           <div class="exp-company">UMass Amherst</div>
+  746           <p>Focus on systems engineering, product strategy, and human-
+      centered design methods.</p>
+  747         </div>
+  748         <div class="exp-item reveal" style="transition-delay:0.15s">
+  749           <div class="exp-period">2017 – 2022</div>
+  750           <h4>BS Electronics Engineering</h4>
+  751           <div class="exp-company">University of Mumbai</div>
+  752           <p>Foundation in hardware systems, signal processing, and emb
+      edded design — informing a constraint-aware design practice.</p>
+  753         </div>
+  754       </div>
+  755     </div>
+  756   </div>
+  757 </section>
+  758
+  759 <!-- Contact -->
+  760 <section id="contact">
+  761   <div class="contact-bg"></div>
+  762   <div class="contact-inner">
+  763     <div class="section-label reveal" style="justify-content:center">Ge
+      t In Touch</div>
+  764     <h2 class="reveal">Let's work<br>together.</h2>
+  765     <p class="reveal" style="transition-delay:0.1s">
+  766       I'm open to new opportunities, collaborations, and conversations
+      about design, product, and everything in between.
+  767     </p>
+  768     <div class="contact-links reveal" style="transition-delay:0.2s">
+  769       <a href="mailto:urvi99@gmail.com" class="btn btn-dark">
+  770         <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><re
+      ct x="1" y="3" width="14" height="10" rx="1.5" stroke="currentColor" st
+      roke-width="1.3"/><path d="M1 4l7 5 7-5" stroke="currentColor" stroke-w
+      idth="1.3"/></svg>
+  771         Send Email
+  772       </a>
+  773       <a href="https://linkedin.com/in/urvidhomne" target="_blank" rel=
+      "noopener" class="btn btn-outline">
+  774         <svg width="16" height="16" viewBox="0 0 16 16" fill="currentCo
+      lor"><path d="M2.5 1A1.5 1.5 0 1 0 2.5 4 1.5 1.5 0 0 0 2.5 1zM1 5.5h3V1
+      5H1V5.5zM6 5.5h2.9v1.3h.04c.4-.76 1.39-1.56 2.86-1.56C14.46 5.24 15 7.2
+       15 9.8V15h-3v-4.66c0-1.11-.02-2.54-1.55-2.54-1.55 0-1.79 1.21-1.79 2.4
+      6V15H6V5.5z"/></svg>
+  775         LinkedIn
+  776       </a>
+  777     </div>
+  778   </div>
+  779 </section>
+  780
+  781 <!-- Footer -->
+  782 <footer>
+  783   <div class="footer-copy">© 2025 Urvi Dhomne. All rights reserved.</di
+      v>
+  784   <div class="footer-links">
+  785     <a href="#about">About</a>
+  786     <a href="#projects">Projects</a>
+  787     <a href="#skills">Skills</a>
+  788     <a href="mailto:urvi99@gmail.com">Contact</a>
+  789     <a href="https://linkedin.com/in/urvidhomne" target="_blank" rel="n
+      oopener">LinkedIn</a>
+  790   </div>
+  791 </footer>
+  792
+  793 <script>
+  794   /* ── Custom Cursor ─────────────────────────────────────────── */
+  795   const cursor = document.getElementById('cursor');
+  796   const ring   = document.getElementById('cursor-ring');
+  797   let mouseX = 0, mouseY = 0, ringX = 0, ringY = 0;
+  798
+  799   document.addEventListener('mousemove', e => {
+  800     mouseX = e.clientX; mouseY = e.clientY;
+  801     cursor.style.left = mouseX + 'px';
+  802     cursor.style.top  = mouseY + 'px';
+  803   });
+  804
+  805   function animateRing() {
+  806     ringX += (mouseX - ringX) * 0.12;
+  807     ringY += (mouseY - ringY) * 0.12;
+  808     ring.style.left = ringX + 'px';
+  809     ring.style.top  = ringY + 'px';
+  810     requestAnimationFrame(animateRing);
+  811   }
+  812   animateRing();
+  813
+  814   document.querySelectorAll('a, button, .project-item, .skill-pill').fo
+      rEach(el => {
+  815     el.addEventListener('mouseenter', () => cursor.classList.add('hover
+      '));
+  816     el.addEventListener('mouseleave', () => cursor.classList.remove('ho
+      ver'));
+  817   });
+  818
+  819   /* ── Header Scroll ─────────────────────────────────────────── */
+  820   const header = document.getElementById('header');
+  821   window.addEventListener('scroll', () => {
+  822     header.classList.toggle('scrolled', window.scrollY > 60);
+  823   });
+  824
+  825   /* ── Typewriter ────────────────────────────────────────────── */
+  826   function typewrite(el, text, speed, delay = 0) {
+  827     return new Promise(resolve => {
+  828       setTimeout(() => {
+  829         let i = 0;
+  830         const tick = () => {
+  831           el.textContent = text.slice(0, ++i);
+  832           if (i < text.length) setTimeout(tick, speed);
+  833           else resolve();
+  834         };
+  835         tick();
+  836       }, delay);
+  837     });
+  838   }
+  839
+  840   /* Hero name inflate animation */
+  841   function inflateText(el, text, charDelay = 80, startDelay = 0) {
+  842     return new Promise(resolve => {
+  843       setTimeout(() => {
+  844         el.innerHTML = '';
+  845         [...text].forEach((ch, i) => {
+  846           const span = document.createElement('span');
+  847           span.textContent = ch === ' ' ? '\u00A0' : ch;
+  848           span.style.cssText = `
+  849             display:inline-block;
+  850             opacity:0;
+  851             transform:scale(0.4) translateY(20px);
+  852             transition: opacity 0.5s ease ${i * charDelay}ms, transform
+       0.5s cubic-bezier(0.22,1,0.36,1) ${i * charDelay}ms;
+  853           `;
+  854           el.appendChild(span);
+  855           requestAnimationFrame(() => requestAnimationFrame(() => {
+  856             span.style.opacity = '1';
+  857             span.style.transform = 'none';
+  858           }));
+  859         });
+  860         setTimeout(resolve, text.length * charDelay + 500);
+  861       }, startDelay);
+  862     });
+  863   }
+  864
+  865   /* ── Intersection Observer for reveals ─────────────────────── */
+  866   const observer = new IntersectionObserver(entries => {
+  867     entries.forEach(e => {
+  868       if (e.isIntersecting) { e.target.classList.add('visible'); observ
+      er.unobserve(e.target); }
+  869     });
+  870   }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  871
+  872   document.querySelectorAll('.reveal').forEach(el => observer.observe(e
+      l));
+  873
+  874   /* ── Boot Animations ───────────────────────────────────────── */
+  875   window.addEventListener('load', async () => {
+  876     await new Promise(r => setTimeout(r, 300));
+  877     inflateText(document.getElementById('hero-first'), 'URVI', 80, 0);
+  878     await inflateText(document.getElementById('hero-last'),  'DHOMNE',
+      80, 200);
+  879     await typewrite(document.getElementById('loc-mumbai'), 'Mumbai', 60
+      , 0);
+  880     typewrite(document.getElementById('loc-dc'), 'Washington DC', 60, 2
+      00);
+  881   });
+  882 </script>
+  883 </body>
+  884 </html>
